@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace AtbashWriter
 {
@@ -13,7 +14,9 @@ namespace AtbashWriter
             string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
             string filePath = Path.Combine(desktopPath, path);
-            File.WriteAllText(filePath, message);
+            File.AppendAllText(filePath,$"\n{message}" );
+
+
         }
 
         public static string ReadFromFile(string path)
