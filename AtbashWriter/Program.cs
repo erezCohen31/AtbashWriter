@@ -6,6 +6,7 @@ namespace atbash
     {
         static void Main(string[] args)
         {
+            Cipher cipher = new Cipher();
             string message = Input.InputMessage();
             string messageEncoded = Cipher.CipherMessage(message);
             FileTool.WriteInFile(messageEncoded, "message.txt");
